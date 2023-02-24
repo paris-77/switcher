@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Sail&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: azure;
+}
+
+.card {
+    width: 60vw;
+    min-height: 50vh;
+    box-shadow: 3px 3px 6px #b0afafb6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+.card img {
+    width: 100%;
+    min-height: 20em;
+    object-fit: cover;
+}
+
+.card h2 {
+    margin: 0.8em 0;
+    font-size: 1.8em;
+}
+
+.card p {
+    font-size: 0.8em;
+}
+
+.toggler {
+    margin: 1em 0 0;
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	width: 5em;
+	height: 2em;
+	background: #5286e0;
+	display: block;
+	border-radius: 20px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 5px;
+	width: 1.6em;
+	height: 1.6em;
+	background: azure;
+	border-radius: 30px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: #070148;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 130px;
+}
+
+.light {
+    color: #070148;
+    background-color: azure;
+}
+
+.dark {
+    color: azure;
+    background-color: #070148;
+}
+
+@media screen and (min-width:450px) {
+    .card {
+        width: 40vw;
+        min-height: 50vh;
+    }
+}
+
+@media screen and (min-width:750px) {
+    .card {
+        width: 30vw;
+        min-height: 50vh;
+    }
+}
